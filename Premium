@@ -25,6 +25,6 @@ else
     })
     wait(2)
     local plr = game:GetService('Players').LocalPlayer
-    plr:Kick('Go Buy The Script Kid')
+    plr:Kick('Join The Server To Buy https://discord.gg/GESwh9t4Dw')
     end
 end
