@@ -1,0 +1,30 @@
+--whitelist
+function Contains(group, text)
+    if string.find(group, text) then
+        return true;
+    else
+        return false;
+    end
+end
+
+local Name = game:GetService('Players').LocalPlayer.Name;
+local ID = game:GetService('Players').LocalPlayer.userId;
+local Format = (Name..'|'..ID);
+local Whitelist = game:HttpGet('https://pastebin.com/fZsgWmFc');-- requires pastebin link
+local BlackList = game:HttpGet('https://pastebin.com/K1A9BPgj');
+
+if Contains(Whitelist, Name) and Contains(Whitelist, ID) then
+	loadstring(game:HttpGet("https://pastebin.com/raw/ybTFX3w2"))()
+
+else
+    if Contains(BlackList, Name) and Contains(BlackList, ID) then
+    print("Not whitelisted :/")
+    game.StarterGui:SetCore("SendNotification", {
+        Title = "Whitelist";
+        Text = "Join The Server To Buy (https://discord.gg/GESwh9t4Dw)"
+    })
+    wait(2)
+    local plr = game:GetService('Players').LocalPlayer
+    plr:Kick('Go Buy The Script Kid')
+    end
+end
